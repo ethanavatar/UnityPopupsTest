@@ -16,6 +16,12 @@ public class UIManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         var instance = Instantiate(StartupMenu, Vector3.zero, Quaternion.identity);
+        instance.transform.Find("Canvas")
+            .transform.Find("Elements")
+            .transform.Find("Title Text")
+            .GetComponent<TMPro.TMP_Text>()
+            .text = "A Random Popup!";
+
         instance.transform.SetParent(this.transform, false);
     }
 
@@ -38,12 +44,28 @@ public class UIManager : MonoBehaviour {
         RandomTimer -= Time.deltaTime;
     }
 
+    private string[] RandomTitles = {
+        "Another One!",
+        "Over Here Now!",
+        "I'm a Popup!",
+        "They're Everywhere!",
+    };
+
+    int i = 0;
+
     void SpawnUI() {
         if (GameObject.Find("Popup(Clone)") != null) {
             return;
         }
 
         var instance = Instantiate(RandomMenu, Vector3.zero, Quaternion.identity);
+
+        instance.transform.Find("Canvas")
+            .transform.Find("Elements")
+            .transform.Find("Title Text")
+            .GetComponent<TMPro.TMP_Text>()
+            .text = RandomTitles[i++ % RandomTitles.Length];
+
         instance.transform.SetParent(this.transform, false);
 
         var rectTransform = instance.transform
