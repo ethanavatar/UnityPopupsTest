@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="gdio.common.objects">
+      <HintPath>..\Assets\GDIO\gdio.common.objects.dll</HintPath>
+    </Reference>
+    <Reference Include="gdio.plugin.serializer">
+      <HintPath>..\Assets\GDIO\gdio.plugin.serializer.dll</HintPath>
+    </Reference>
+    <Reference Include="gdio.unity_api">
+      <HintPath>..\Assets\GDIO\gdio.unity_api.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

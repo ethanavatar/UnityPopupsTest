@@ -5,7 +5,8 @@ var autoplay = false;
 var api = new ApiClient();
 
 // Setup connection
-api.Connect("localhost", autoplay: autoplay, timeout: 60);
+api.Connect("localhost", autoplay: autoplay);
+
 api.Wait(1000);
 api.EnableHooks(HookingObject.ALL);
 
@@ -60,5 +61,7 @@ api.DisableHooks(HookingObject.ALL);
 
 api.Disconnect();
 api.Wait(1000);
-if (autoplay)
+
+if (autoplay) {
     api.StopEditorPlay();
+}
